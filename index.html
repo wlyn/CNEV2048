@@ -4,6 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>新能源汽车2048</title>
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAcUklEQVR42kV6Sa+lWXbVWnuf893mNdF3GRmRfVtJZlbZrg4Kt4CQsTBCMpIREwYIRiB+BhMGzBjAAAnZRrKQsRBCRrbKyFW4XE5Xl1lV2VVkREZmREbEi9fdd+93zt6LwfcSBm/2bvOdu/c6q+M//3f/RpmgAVZJA/aPjtatOZkZKdRhtru95Syt9R6RtHmxag7QaHUoQ6lHq4PV8fEINDUz+lBgJgnq2TtSxct8mG8NC7B62qxWc2Z2ox+dHB+eHNZhUb0CNDfQFF2SBIACyCD7qEYaaAbSK4uTKCIBix4RY4BOK7RCqgcEN9M4rle2vb0zG6o1i0T0hEXxQqPRzPzMcluZJ+uTbLlpMe6t1quRkiv7GKQNs7JczmJ7c/7c+eVyWbysNye9d7BT6VYi5AYzSJDSzBVKhRSZAELRe/YyFC9OGgWGrHhRQqnoGT2apB7MhJQSSQNJa5txhdVimHmxoXprAcBopZT5bFCPR589vn3r7t1PH60OTsb12HtEaySqF8lAGlU8auF8PmzvbF+5fvXspXPbZ7fKUEVbDAuYiUYAZhnRMwUkkImMbL331oQ+kDVpxZ00EIkSrSuztz72LgG9K0Kgu5mbFSNhpBeHeSoJzRfzUpzA5ujkvQ/u3H7/zv279yNkVgKQRMocAFhcAgVAmWwtN+vjRw/2P7n9aZ3Ptne3Lj956crT1+uZbRHKcGIGggiJJN0M7BEJyeksmWyQ+mZYYGaWmaWnemTLzMhMMGWkmakOcHoxczORTBXRygjZvBzsHd7+wfsPbt9fH68jg27FQanQOiyiGw0SUgSlJCAolIS8VJQaqceP9h893Pvgp7d2nrh8+aVnt8+fUYSzV2IADEYzIc2MdCHGEGkewdjEzEPOZAGEDEQqwUwSpdah1nAUL2Y0EqFV1ybacqcq9OFf/uTjH/9stXdYzUotZiZJCVJKFDeBgpkJJi9FIWTQqLRsEZldcoM7ay3R2oP3b+3dvX/lhWcuPHPDdharyKVxxwEEqGFwMFdHqXF0wE3uxVLZOxhFisyevWckaU4bSl0ulp0JBwBJq46TLnq/+5P3773z0fpktFmdb83j002ryvLEzWAwqwAhBujOTp0yCAoLrYSMT1UtBIOYJh0RUCh6SZAYAcHphFJRaGH0Kkl6CQ9qMEliAA">
+    <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAIAAAAlC+aJAAAcUklEQVR42kV6Sa+lWXbVWnuf893mNdF3GRmRfVtJZlbZrg4Kt4CQsTBCMpIREwYIRiB+BhMGzBjAAAnZRrKQsRBCRrbKyFW4XE5Xl1lV2VVkREZmREbEi9fdd+93zt6LwfcSBm/2bvOdu/c6q+M//3f/RpmgAVZJA/aPjtatOZkZKdRhtru95Syt9R6RtHmxag7QaHUoQ6lHq4PV8fEINDUz+lBgJgnq2TtSxct8mG8NC7B62qxWc2Z2ox+dHB+eHNZhUb0CNDfQFF2SBIACyCD7qEYaaAbSK4uTKCIBix4RY4BOK7RCqgcEN9M4rle2vb0zG6o1i0T0hEXxQqPRzPzMcluZJ+uTbLlpMe6t1quRkiv7GKQNs7JczmJ7c/7c+eVyWbysNye9d7BT6VYi5AYzSJDSzBVKhRSZAELRe/YyFC9OGgWGrHhRQqnoGT2apB7MhJQSSQNJa5txhdVimHmxoXprAcBopZT5bFCPR589vn3r7t1PH60OTsb12HtEaySqF8lAGlU8auF8PmzvbF+5fvXspXPbZ7fKUEVbDAuYiUYAZhnRMwUkkImMbL331oQ+kDVpxZ00EIkSrSuztz72LgG9K0Kgu5mbFSNhpBeHeSoJzRfzUpzA5ujkvQ/u3H7/zv279yNkVgKQRMocAFhcAgVAmWwtN+vjRw/2P7n9aZ3Ptne3Lj956crT1+uZbRHKcGIGggiJJN0M7BEJyeksmWyQ+mZYYGaWmaWnemTLzMhMMGWkmakOcHoxczORTBXRygjZvBzsHd7+wfsPbt9fH68jg27FQanQOiyiGw0SUgSlJCAolIS8VJQaqceP9h893Pvgp7d2nrh8+aVnt8+fUYSzV2IADEYzIc2MdCHGEGkewdjEzEPOZAGEDEQqwUwSpdah1nAUL2Y0EqFV1ybacqcq9OFf/uTjH/9stXdYzUotZiZJCVJKFDeBgpkJJi9FIWTQqLRsEZldcoM7ay3R2oP3b+3dvX/lhWcuPHPDdharyKVxxwEEqGFwMFdHqXF0wE3uxVLZOxhFisyevWckaU4bSl0ulp0JBwBJq46TLnq/+5P3773z0fpktFmdb83j002ryvLEzWAwqwAhBujOTp0yCAoLrYSMT1UtBIOYJh0RUCh6SZAYAcHphFJRaGH0Kkl6CQ9qMEliAA">
+    
+    <!-- Open Graph 社交分享标签 -->
+    <meta property="og:title" content="🚗 新能源汽车2048 - 中国新能源品牌主题游戏">
+    <meta property="og:description" content="合并相同品牌，从极氪一路升级到比亚迪！看看你能不能成为新能源销量冠军！">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cnev.wlyn.net">
+    <meta property="og:image" content="https://cnev.wlyn.net/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="🚗 新能源汽车2048">
+    <meta name="twitter:description" content="中国新能源汽车品牌主题2048游戏！">
+    <meta name="description" content="新能源汽车2048 - 一款以中国新能源汽车品牌为主题的2048游戏，从极氪合并到比亚迪！">
     <style>
         * {
             margin: 0;
@@ -353,9 +366,174 @@
                 grid-template-columns: repeat(3, 1fr);
             }
         }
+
+        /* 音效按钮 */
+        .sound-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+        .sound-toggle:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1);
+        }
+        .sound-toggle.muted {
+            opacity: 0.5;
+        }
+
+        /* 分享按钮 */
+        .share-btn {
+            background: linear-gradient(135deg, #ff6b6b, #ffa500);
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .share-btn:hover {
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+        }
+
+        /* 排行榜样式 */
+        .leaderboard {
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            max-width: 460px;
+            display: none;
+        }
+        .leaderboard h3 {
+            text-align: center;
+            margin-bottom: 15px;
+            color: #ffd700;
+            font-size: 1rem;
+        }
+        .leaderboard-list {
+            list-style: none;
+        }
+        .leaderboard-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            margin-bottom: 8px;
+        }
+        .leaderboard-item:first-child {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 215, 0, 0.1));
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+        .leaderboard-item:nth-child(2) {
+            background: linear-gradient(135deg, rgba(192, 192, 192, 0.2), rgba(192, 192, 192, 0.1));
+        }
+        .leaderboard-item:nth-child(3) {
+            background: linear-gradient(135deg, rgba(205, 127, 50, 0.2), rgba(205, 127, 50, 0.1));
+        }
+        .leaderboard-rank {
+            font-weight: bold;
+            color: #ffd700;
+            width: 30px;
+        }
+        .leaderboard-name {
+            flex: 1;
+            margin-left: 10px;
+            color: #fff;
+        }
+        .leaderboard-score {
+            font-weight: bold;
+            color: #00d4ff;
+        }
+
+        /* 分享模态框 */
+        .share-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1001;
+        }
+        .share-modal {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            max-width: 350px;
+            width: 90%;
+        }
+        .share-modal h3 {
+            color: #00d4ff;
+            margin-bottom: 20px;
+        }
+        .share-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .share-buttons button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: transform 0.2s;
+        }
+        .share-buttons button:hover {
+            transform: scale(1.05);
+        }
+        .share-weixin { background: #07c160; color: white; }
+        .share-weibo { background: #e6162d; color: white; }
+        .share-copy { background: #6c757d; color: white; }
+        .share-close {
+            background: rgba(255, 255, 255, 0.1);
+            color: #888;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 10px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        /* 方块滑动动画增强 */
+        .cell {
+            transition: transform 0.12s ease-out, background 0.15s ease;
+        }
+        .cell.sliding {
+            z-index: 10;
+        }
+        @keyframes slideIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        .cell.new-tile {
+            animation: slideIn 0.15s ease-out;
+        }
     </style>
 </head>
 <body>
+
+    <!-- 音效开关 -->
+    <button class="sound-toggle" id="sound-toggle" onclick="toggleSound()" title="开关音效">🔊</button>
+
     <div class="header">
         <h1>🚗 新能源汽车 2048</h1>
         <p>合并相同品牌，冲击销量冠军比亚迪！</p>
@@ -379,6 +557,8 @@
     <div class="controls">
         <button class="btn btn-primary" onclick="newGame()">新游戏</button>
         <button class="btn btn-secondary" onclick="showLegend()">品牌图鉴</button>
+        <button class="btn btn-secondary" onclick="showLeaderboard()">🏆 排行榜</button>
+        <button class="btn share-btn" onclick="showShareModal()">📤 分享</button>
     </div>
 
     <div class="instructions">
@@ -398,6 +578,25 @@
             <button class="btn btn-primary" onclick="newGame()">再来一局</button>
         </div>
     </div>
+
+    <div class="leaderboard" id="leaderboard">
+        <h3>🏆 本地排行榜</h3>
+        <ul class="leaderboard-list" id="leaderboard-list"></ul>
+    </div>
+
+    <div class="share-modal-overlay" id="share-modal">
+        <div class="share-modal">
+            <h3>📤 分享你的成绩</h3>
+            <p style="color: #888; margin-bottom: 15px;">我在新能源汽车2048获得了 <span id="share-score" style="color: #00d4ff; font-weight: bold;">0</span> 分！</p>
+            <div class="share-buttons">
+                <button class="share-weixin" onclick="shareToWeixin()">微信</button>
+                <button class="share-weibo" onclick="shareToWeibo()">微博</button>
+                <button class="share-copy" onclick="copyShareLink()">复制链接</button>
+            </div>
+            <button class="share-close" onclick="hideShareModal()">关闭</button>
+        </div>
+    </div>
+
 
     <script>
         // 品牌配置：按销量从高到低排列，使用汽车之家官方logo
@@ -601,9 +800,11 @@
             }
             
             if (moved) {
+                playSound('move');
                 addRandomTile();
                 render();
                 
+                if (mergedCells.length > 0) playSound('merge');
                 mergedCells.forEach(cellIndex => {
                     const cell = document.getElementById(`cell-${cellIndex}`);
                     cell.classList.add('merged');
@@ -642,6 +843,8 @@
 
         function showGameOver(isWin) {
             gameOver = true;
+            saveToLeaderboard(score);
+            playSound(isWin ? 'win' : 'lose');
             const overlay = document.getElementById('game-over');
             const modal = document.getElementById('game-over-modal');
             const title = document.getElementById('game-over-title');
@@ -728,6 +931,8 @@
 
         function showLegend() {
             const legend = document.getElementById('legend');
+            const leaderboard = document.getElementById('leaderboard');
+            leaderboard.style.display = 'none';
             legend.style.display = legend.style.display === 'none' ? 'block' : 'none';
         }
 
@@ -750,6 +955,173 @@
                 legendGrid.appendChild(item);
             });
         }
+
+
+        // ===== 音效系统 =====
+        let soundEnabled = localStorage.getItem('ev2048-sound') !== 'false';
+        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        
+        function playSound(type) {
+            if (!soundEnabled) return;
+            const oscillator = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+            
+            switch(type) {
+                case 'move':
+                    oscillator.frequency.setValueAtTime(400, audioContext.currentTime);
+                    oscillator.frequency.exponentialRampToValueAtTime(300, audioContext.currentTime + 0.1);
+                    gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+                    gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
+                    oscillator.start();
+                    oscillator.stop(audioContext.currentTime + 0.1);
+                    break;
+                case 'merge':
+                    oscillator.frequency.setValueAtTime(600, audioContext.currentTime);
+                    oscillator.frequency.exponentialRampToValueAtTime(800, audioContext.currentTime + 0.15);
+                    gainNode.gain.setValueAtTime(0.15, audioContext.currentTime);
+                    gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.15);
+                    oscillator.start();
+                    oscillator.stop(audioContext.currentTime + 0.15);
+                    break;
+                case 'win':
+                    [0, 0.15, 0.3, 0.45].forEach((delay, i) => {
+                        const osc = audioContext.createOscillator();
+                        const gain = audioContext.createGain();
+                        osc.connect(gain);
+                        gain.connect(audioContext.destination);
+                        osc.frequency.setValueAtTime([523, 659, 784, 1047][i], audioContext.currentTime + delay);
+                        gain.gain.setValueAtTime(0.15, audioContext.currentTime + delay);
+                        gain.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + delay + 0.2);
+                        osc.start(audioContext.currentTime + delay);
+                        osc.stop(audioContext.currentTime + delay + 0.2);
+                    });
+                    break;
+                case 'lose':
+                    oscillator.frequency.setValueAtTime(300, audioContext.currentTime);
+                    oscillator.frequency.exponentialRampToValueAtTime(100, audioContext.currentTime + 0.3);
+                    gainNode.gain.setValueAtTime(0.15, audioContext.currentTime);
+                    gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.3);
+                    oscillator.start();
+                    oscillator.stop(audioContext.currentTime + 0.3);
+                    break;
+            }
+        }
+        
+        function toggleSound() {
+            soundEnabled = !soundEnabled;
+            localStorage.setItem('ev2048-sound', soundEnabled);
+            document.getElementById('sound-toggle').textContent = soundEnabled ? '🔊' : '🔇';
+            document.getElementById('sound-toggle').classList.toggle('muted', !soundEnabled);
+            if (soundEnabled) playSound('move');
+        }
+        
+        // 初始化音效按钮状态
+        document.getElementById('sound-toggle').textContent = soundEnabled ? '🔊' : '🔇';
+        document.getElementById('sound-toggle').classList.toggle('muted', !soundEnabled);
+
+        // ===== 排行榜系统 =====
+        function getLeaderboard() {
+            const data = localStorage.getItem('ev2048-leaderboard');
+            return data ? JSON.parse(data) : [];
+        }
+        
+        function saveToLeaderboard(score) {
+            const leaderboard = getLeaderboard();
+            const date = new Date().toLocaleDateString('zh-CN');
+            leaderboard.push({ score, date });
+            leaderboard.sort((a, b) => b.score - a.score);
+            const top10 = leaderboard.slice(0, 10);
+            localStorage.setItem('ev2048-leaderboard', JSON.stringify(top10));
+            return top10;
+        }
+        
+        function showLeaderboard() {
+            const leaderboard = document.getElementById('leaderboard');
+            const legend = document.getElementById('legend');
+            legend.style.display = 'none';
+            leaderboard.style.display = leaderboard.style.display === 'none' ? 'block' : 'none';
+            
+            if (leaderboard.style.display === 'block') {
+                renderLeaderboard();
+            }
+        }
+        
+        function renderLeaderboard() {
+            const list = document.getElementById('leaderboard-list');
+            const data = getLeaderboard();
+            list.innerHTML = '';
+            
+            if (data.length === 0) {
+                list.innerHTML = '<li class="leaderboard-item" style="justify-content: center; color: #666;">还没有记录，开始游戏吧！</li>';
+                return;
+            }
+            
+            data.forEach((item, index) => {
+                const medals = ['🥇', '🥈', '🥉'];
+                const rank = index < 3 ? medals[index] : `${index + 1}`;
+                const li = document.createElement('li');
+                li.className = 'leaderboard-item';
+                li.innerHTML = `
+                    <span class="leaderboard-rank">${rank}</span>
+                    <span class="leaderboard-name">${item.date}</span>
+                    <span class="leaderboard-score">${item.score}</span>
+                `;
+                list.appendChild(li);
+            });
+        }
+
+        // ===== 分享功能 =====
+        function showShareModal() {
+            document.getElementById('share-score').textContent = score;
+            document.getElementById('share-modal').style.display = 'flex';
+        }
+        
+        function hideShareModal() {
+            document.getElementById('share-modal').style.display = 'none';
+        }
+        
+        function shareToWeixin() {
+            const text = `🚗 我在新能源汽车2048获得了 ${score} 分！从极氪到比亚迪，你能超过我吗？👉 https://cnev.wlyn.net`;
+            if (navigator.share) {
+                navigator.share({ title: '新能源汽车2048', text: text, url: 'https://cnev.wlyn.net' });
+            } else {
+                copyToClipboard(text);
+                alert('分享内容已复制，请粘贴到微信分享给好友！');
+            }
+        }
+        
+        function shareToWeibo() {
+            const text = encodeURIComponent(`🚗 我在新能源汽车2048获得了 ${score} 分！从极氪到比亚迪，你能超过我吗？`);
+            const url = encodeURIComponent('https://cnev.wlyn.net');
+            window.open(`https://service.weibo.com/share/share.php?title=${text}&url=${url}`, '_blank');
+        }
+        
+        function copyShareLink() {
+            const text = `🚗 我在新能源汽车2048获得了 ${score} 分！从极氪到比亚迪，你能超过我吗？👉 https://cnev.wlyn.net`;
+            copyToClipboard(text);
+            alert('分享内容已复制到剪贴板！');
+        }
+        
+        function copyToClipboard(text) {
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(text);
+            } else {
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+            }
+        }
+        
+        // 点击模态框外部关闭
+        document.getElementById('share-modal').addEventListener('click', function(e) {
+            if (e.target === this) hideShareModal();
+        });
+
 
         init();
     </script>
